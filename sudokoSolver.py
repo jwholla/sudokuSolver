@@ -213,6 +213,14 @@ def match(row,col,value):
 	#delete from list of blanks
 	#replace section in matrix with new value
 
+def rowcheck(row,value):
+	print 'thing'
+	
+def colcheck(col,value):
+	print 'thing'
+def cubecheck(row,col,value):
+	print 'thing'
+	
 #how do i figure out the section of the cube
 	
 #part 2- solve it
@@ -225,7 +233,7 @@ blank_num=0
 #while there are blanks
 while len(blanks)>0:
 	blank_num=0
-	while blank_num<40:
+	while blank_num<len(blanks):
 		numbers=list(xrange(1,10))
 	#i need to access the row of the matrix
 		temp=blanks[blank_num]
@@ -239,6 +247,36 @@ while len(blanks)>0:
 			print 'yay'
 			match((temp[0]),(temp[1]),(numbers[0]))
 			#function when we have a match
+###rest of algorithm- this is where I stopped for the night
+		while len(numbers)>1:
+			i=0
+			while i < len(numbers):
+				temp_numb=numbers[i]
+				j=0
+				while j < 9:
+					if temp_numb ==Matrix[(temp[0])][j]:
+						test=int(Matrix[(temp[0])][j])
+						numbers.remove(test)
+			while i < len(numbers):
+				temp_numb=numbers[i]
+				j=0
+				while j < 9:
+					if temp_numb ==Matrix[j][(temp[1])]:
+						test=int(Matrix[j][(temp[1])])
+						numbers.remove(test)
+				#row,column
+				#does numbers[i] exist in row
+				
+				#does numbers[i] exist in column
+				
+				#does numbers[i] exist in cube
+							
+			#iterate over these numbers
+			#does number fit in other spaces in row
+			#does number fit in other spaces in column
+			#does number fit in other spaces in cube
+			#if number only fits in those
+			#check if there are legal spaces for the other numbers
 		print 'length of blanks',len(blanks)
 		blank_num+=1
 		
