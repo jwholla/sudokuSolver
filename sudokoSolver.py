@@ -237,6 +237,7 @@ while len(blanks)>0:
 		numbers=list(xrange(1,10))
 	#i need to access the row of the matrix
 		temp=blanks[blank_num]
+		#algorithm step 1- take a blank, see if any other number fits thereif not, done
 		rowlist((temp[0]),(temp[1]))
 		columnlist((temp[0]),(temp[1]))
 		cubelist((temp[0]),(temp[1]))
@@ -247,16 +248,22 @@ while len(blanks)>0:
 			print 'yay'
 			match((temp[0]),(temp[1]),(numbers[0]))
 			#function when we have a match
-###rest of algorithm- this is where I stopped for the night
-		while len(numbers)>1:
+###algorithm step 2, if multiple numbers fit here, for each number, see if theres a number that doesnt fit elsewhere
+#iterate over numbers
+#check if number fits anywhere else in cube, if it does, check next number, if it doesn't, then fill in
+		if len(numbers)>1:
 			i=0
 			while i < len(numbers):
 				temp_numb=numbers[i]
 				j=0
 				while j < 9:
+					print 'trying to see if this number is in the row', temp_numb
 					if temp_numb ==Matrix[(temp[0])][j]:
 						test=int(Matrix[(temp[0])][j])
 						numbers.remove(test)
+					j+=1
+				i+=1
+			i=0
 			while i < len(numbers):
 				temp_numb=numbers[i]
 				j=0
@@ -264,6 +271,8 @@ while len(blanks)>0:
 					if temp_numb ==Matrix[j][(temp[1])]:
 						test=int(Matrix[j][(temp[1])])
 						numbers.remove(test)
+					j+=1
+				i+=1
 				#row,column
 				#does numbers[i] exist in row
 				
