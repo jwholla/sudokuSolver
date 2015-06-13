@@ -85,7 +85,7 @@ def cubelist(row,column):
 	if int(row) <= 2:
 #if in the top 3 rows
 		if int(column) <=2:
-#			print 'section 1'
+			print 'section 1'
 #if in the top left section, row 0-2, col 0-2
 			i=0
 			j=0
@@ -99,7 +99,7 @@ def cubelist(row,column):
 				i+=1
 #if in the top middle section, row 0-2, col 3-5
 		if int(column)>2 and int(column)<=5:
-#			print 'section 2'
+			print 'section 2'
 			i=0
 			j=3
 			while i <=2:
@@ -112,7 +112,7 @@ def cubelist(row,column):
 				i+=1		
 #in the top right section, row 0-2, col, 6-8
 		if int(column)>5:
-#			print 'section 3'
+			print 'section 3'
 			i=0
 			j=6
 			while i <3:
@@ -126,7 +126,7 @@ def cubelist(row,column):
 #middle left section, rows 3-5, col 0-2
 	if int(row) > 2 and int(row)<=5:
 		if int(column) <=2:
-#			print 'section 4'
+			print 'section 4'
 			i=3
 			j=0
 			while i <6:
@@ -139,7 +139,7 @@ def cubelist(row,column):
 				i+=1
 				#middle, middle, 3,4,5 for both
 		if int(column)>2 and int(column)<=5:
-#			print 'section 5'
+			print 'section 5'
 			i=3
 			j=3
 			while i <6:
@@ -152,7 +152,7 @@ def cubelist(row,column):
 				i+=1	
 #middle right, row 3-5, col 6-8				
 		if int(column)>5:
-#			print 'section 6'
+			print 'section 6'
 			i=2
 			j=6
 			while i <6:
@@ -166,7 +166,7 @@ def cubelist(row,column):
 #section3, bottom left
 	if int(row) > 5:
 		if int(column) <=2:
-#			print 'section 7'
+			print 'section 7'
 			i=6
 			j=0
 			while i <9:
@@ -179,7 +179,7 @@ def cubelist(row,column):
 				i+=1
 				#bottom middle, row 6-8, col 3-5
 		if int(column)>2 and int(column)<=5:
-#			print 'section 8'
+			print 'section 8'
 			i=6
 			j=3
 			while i <9:
@@ -192,7 +192,7 @@ def cubelist(row,column):
 				i+=1		
 				#bottom right
 		if int(column)>5:
-#			print 'section 9'
+			print 'section 9'
 			i=6
 			j=6
 			while i <9:
@@ -232,27 +232,44 @@ while len(blanks)>0:
 		rowlist((temp[0]),(temp[1]))
 		columnlist((temp[0]),(temp[1]))
 		cubelist((temp[0]),(temp[1]))
-#		print 'numbers modified',numbers
+		print 'numbers modified',numbers
 		#shortcut-only one number fits
 
 		if len(numbers)==1:
 			print 'yay'
 			match((temp[0]),(temp[1]),(numbers[0]))
 			#function when we have a match
-		print 'length of blanks',len(blanks)
 		blank_num+=1
-		
-	i=0
-	while i < 9:
-		print Matrix[i]
-		i+=1
+
 	
 #	look at blank 1
 i=0
 while i < 9:
 	print Matrix[i]
 	i+=1
+	
+#	while j< len(blanks):
+#		k=1
+		#create a list of possible numbers then iterate over those
 		
+		
+#		while k<10:
+			#check if k fits the first blank
+#			if validcube(k):
+#				if validrow(k):
+#					if validcolumn(k):
+			
+			
+#			k+=1
+		
+#		j+=1
+		
+		#if only valid record, fill in the entry in matrix
+		#delete from blanks list
+		
+#		else:
+			#move to next blank, then reset
+	
 print 'length of blanks',len(blanks)
 
 #we know that a number fills in if either of these criteria fails
